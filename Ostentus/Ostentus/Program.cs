@@ -8,6 +8,34 @@ var app = builder.Build();
 app.UseStaticFiles();
 app.UseRouting();
 
-app.MapFallbackToFile("index.html"); ;
+Processor processor = new();
+var processorTask = processor.RunAsync();
 
-app.Run();
+processor.Process("test", (ctx) =>
+{
+    Console.WriteLine("TESTING");
+});
+
+#region Endpoints
+app.MapGet("/api/on", () =>
+{
+    processor.Process("/api/on", (ctx) =>
+    {
+        Console.WriteLine("on");
+        ctx.On();
+    });
+});
+app.MapGet("/api/off", () =>
+{
+    processor.Process("/api/off", (ctx) =>
+    {
+        Console.WriteLine("off");
+        ctx.Off();
+    });
+});
+#endregion Endpoints
+
+app.MapFallbackToFile("index.html");
+
+var serverTask = app.RunAsync();
+await processorTask;

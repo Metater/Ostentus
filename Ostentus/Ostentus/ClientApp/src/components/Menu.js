@@ -18,13 +18,9 @@ export function Menu() {
           <Navbar.Collapse id="responsive-navbar-nav">
           
           <Nav className="me-auto">
-            <LinkContainer to="/button">
+            <LinkContainer to="/onoff">
               <Nav.Link>Button</Nav.Link>
             </LinkContainer>
-          </Nav>
-          
-          <Nav>
-
           </Nav>
 
           </Navbar.Collapse>

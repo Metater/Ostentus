@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { Home } from './components/Home';
-import { Button } from './components/Button';
+import { OnOff } from './components/Button';
 import { Menu } from './components/Menu';
 
 const AppRoutes = [
@@ -11,8 +11,8 @@ const AppRoutes = [
     element: <Home />
   },
   {
-    path: "/button",
-    element: <Button />
+    path: "/onoff",
+    element: <OnOff />
   }
 ];
 
