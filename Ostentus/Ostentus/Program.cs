@@ -11,11 +11,6 @@ app.UseRouting();
 Processor processor = new();
 var processorTask = processor.RunAsync();
 
-processor.Process("test", (ctx) =>
-{
-    Console.WriteLine("TESTING");
-});
-
 #region Endpoints
 app.MapGet("/api/on", () =>
 {
