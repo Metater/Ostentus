@@ -6,3 +6,4 @@ global using MetaHic;
 
 global using System.Text.Json;
 global using System.Collections.Concurrent;
+global using System.Diagnostics;

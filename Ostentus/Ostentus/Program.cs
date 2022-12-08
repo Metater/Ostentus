@@ -1,6 +1,14 @@
 // Runner game, like chrome game
 // Arena shooter game
 
+static Process? PlayPippyLunchtime() => Process.Start(new ProcessStartInfo
+{
+    FileName = @"C:\Utils\ffplay",
+    Arguments = "-nodisp -autoexit \"C:\\Utils\\pippy-lunchtime.m4a\"",
+    RedirectStandardOutput = true,
+    UseShellExecute = false
+});
+
 var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
@@ -27,6 +35,13 @@ app.MapGet("/api/off", () =>
         Console.WriteLine("off");
         ctx.Off();
     });
+});
+app.MapGet("/api/play-pippy-lunchtime", () =>
+{
+    // ffplay.exe -nodisp -autoexit pippy-lunchtime.m4a
+    //Console.Beep();
+    //https://stackoverflow.com/questions/46835811/ffplay-wasapi-cant-initialize-audio-client-ffmpeg-3-4-binaries
+    PlayPippyLunchtime()?.WaitForExit();
 });
 #endregion Endpoints
 

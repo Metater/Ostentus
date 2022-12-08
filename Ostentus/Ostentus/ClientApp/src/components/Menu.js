@@ -21,6 +21,9 @@ export function Menu() {
             <LinkContainer to="/onoff">
               <Nav.Link>Button</Nav.Link>
             </LinkContainer>
+            <LinkContainer to="/lunchtime">
+              <Nav.Link>Lunchtime</Nav.Link>
+            </LinkContainer>
           </Nav>
 
           </Navbar.Collapse>

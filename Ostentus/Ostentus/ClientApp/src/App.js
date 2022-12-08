@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Home } from './components/Home';
 import { OnOff } from './components/Button';
 import { Menu } from './components/Menu';
+import { Lunchtime } from './components/Lunchtime';
 
 const AppRoutes = [
   {
@@ -13,6 +14,10 @@ const AppRoutes = [
   {
     path: "/onoff",
     element: <OnOff />
+  },
+  {
+    path: "/lunchtime",
+    element: <Lunchtime />
   }
 ];
 
