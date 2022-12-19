@@ -4,7 +4,7 @@
 static Process? PlayPippyLunchtime() => Process.Start(new ProcessStartInfo
 {
     FileName = @"C:\Utils\ffplay",
-    Arguments = "-nodisp -autoexit \"C:\\Utils\\pippy-lunchtime.m4a\"",
+    Arguments = "-nodisp -autoexit \"C:\\Utils\\pippy-lunchtime.mp3\"",
     RedirectStandardOutput = true,
     UseShellExecute = false
 });
