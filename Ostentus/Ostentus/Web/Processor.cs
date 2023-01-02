@@ -123,6 +123,7 @@ public class Processor
     public async Task RunAsync()
     {
         isProcessing = true;
+        Stopwatch timer = new();
         context.Start();
         while (isProcessing)
         {
@@ -137,6 +138,16 @@ public class Processor
                 {
                     break;
                 }
+            }
+            if (!timer.IsRunning)
+            {
+                timer.Start();
+                context.Update(0);
+            }
+            else
+            {
+                context.Update(timer.Elapsed.TotalSeconds);
+                timer.Restart();
             }
             await Task.Delay(1);
         }

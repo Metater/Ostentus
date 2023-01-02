@@ -15,6 +15,10 @@ public class ProcessorContext
     {
         client.Connect();
     }
+    public void Update(double deltaTime)
+    {
+        
+    }
     public void Stop()
     {
         client.Disconnect();

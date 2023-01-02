@@ -43,6 +43,10 @@ app.MapGet("/api/play-pippy-lunchtime", () =>
     //https://stackoverflow.com/questions/46835811/ffplay-wasapi-cant-initialize-audio-client-ffmpeg-3-4-binaries
     PlayPippyLunchtime()?.WaitForExit();
 });
+app.MapGet("/api/lunchtime/update-alarm-time", (string time) =>
+{
+    Console.WriteLine(time);
+});
 #endregion Endpoints
 
 app.MapFallbackToFile("index.html");
